@@ -1,5 +1,11 @@
 # NPR transcript analysis project
 
+## Main finding
+
+**Speakers tend to echo the language style of the person who spoke immediately before them.** When one speaker uses pronouns, articles, conjunctions, or hedge words such as “maybe” and “kind of,” the next speaker is more likely to use those same types of words. In short, the analysis finds linguistic alignment between adjacent speakers.
+
+This does not mean speakers copy every word or do so deliberately. It means they are more likely to match the previous speaker’s broader word-use style. The pattern is statistically reliable in 6 of the 8 planned tests, with the strongest association for articles, followed by hedges and conjunctions.
+
 This repository contains a local NPR transcript analysis pipeline focused on sequential linguistic association and conversational alignment. The main analysis is not the simple thank-you/gender correlation; it is a larger study of whether adjacent speakers align on word-level features such as pronouns, articles, conjunctions, and hedges.
 
 ## Project goal
