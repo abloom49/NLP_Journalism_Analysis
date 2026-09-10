@@ -1,0 +1,46 @@
+transcript_id,source,speaker_name,first_name,gender,said_thank_you,total_turns,speaker_role
+transcript_1,npr,LEILA FADEL,LEILA,m,0,6,guest
+transcript_1,npr,AYA BATRAWY,AYA,unknown,1,5,guest
+transcript_1,npr,MACKENZIE EAGLEN,MACKENZIE,f,0,1,guest
+transcript_1,npr,CARRIE KAHN,CARRIE,m,0,7,guest
+transcript_1,npr,GIDEON SA'AR,GIDEON,unknown,0,1,guest
+transcript_1,npr,SULEIMAN DAWABSHA,SULEIMAN,unknown,0,1,guest
+transcript_1,npr,ERAN YASHIV,ERAN,unknown,0,1,guest
+transcript_1,npr,ANDREW LIMBONG,ANDREW,m,1,9,guest
+transcript_1,npr,LONNIE BUNCH III,LONNIE,f,0,1,guest
+transcript_1,npr,BUNCH,BUNCH,unknown,0,2,guest
+transcript_2,npr,LEILA FADEL,LEILA,m,0,6,guest
+transcript_2,npr,AYA BATRAWY,AYA,unknown,1,5,guest
+transcript_2,npr,MACKENZIE EAGLEN,MACKENZIE,f,0,1,guest
+transcript_2,npr,CARRIE KAHN,CARRIE,m,0,7,guest
+transcript_2,npr,GIDEON SA'AR,GIDEON,unknown,0,1,guest
+transcript_2,npr,SULEIMAN DAWABSHA,SULEIMAN,unknown,0,1,guest
+transcript_2,npr,ERAN YASHIV,ERAN,unknown,0,1,guest
+transcript_2,npr,ANDREW LIMBONG,ANDREW,m,1,9,guest
+transcript_2,npr,LONNIE BUNCH III,LONNIE,f,0,1,guest
+transcript_2,npr,BUNCH,BUNCH,unknown,0,2,guest
+transcript_3,npr,PRESIDENT DONALD TRUMP,DONALD,f,0,1,guest
+transcript_3,npr,LONNIE G BUNCH III,LONNIE,f,0,1,guest
+transcript_3,npr,BUNCH,BUNCH,unknown,1,13,guest
+transcript_4,npr,STEVE SHEFFELS,STEVE,f,0,4,guest
+transcript_4,npr,JILLIEN STREIT,JILLIEN,unknown,0,2,guest
+transcript_4,npr,BRIGITTA MIRANDA-FREER,BRIGITTA,unknown,0,1,guest
+transcript_5,npr,CARIDAD,CARIDAD,unknown,0,1,guest
+transcript_5,npr,MATT WILSON,MATT,f,0,1,guest
+transcript_5,npr,WILSON,WILSON,f,0,2,guest
+transcript_6,npr,DETROW,DETROW,unknown,0,1,guest
+transcript_6,npr,DURRIE BOUSCAREN,DURRIE,unknown,0,11,guest
+transcript_6,npr,DESI BOYZ,DESI,unknown,0,1,guest
+transcript_7,npr,PFEIFFER,PFEIFFER,unknown,1,5,guest
+transcript_7,npr,ZOHRAN MAMDANI,ZOHRAN,unknown,0,1,guest
+transcript_7,npr,JON STEWART,JON,f,0,1,guest
+transcript_8,npr,DAVID ARNAL,DAVID,m,0,2,guest
+transcript_8,npr,BRAD CAVIN,BRAD,f,0,2,guest
+transcript_8,npr,CAROLINE OATLEY,CAROLINE,m,0,3,guest
+transcript_8,npr,NATE KRELIS,NATE,unknown,0,1,guest
+transcript_8,npr,MICHAEL LEWIS,MICHAEL,m,0,1,guest
+transcript_9,npr,BILAL SAAB,BILAL,unknown,0,1,guest
+transcript_9,npr,AYA BATRAWY,AYA,unknown,1,5,guest
+transcript_9,npr,MAJED AL-ANSARI,MAJED,unknown,0,1,guest
+transcript_9,npr,DARYL CAUDLE,DARYL,f,0,1,guest
+transcript_9,npr,TOM BOWMAN,TOM,f,0,4,guest
