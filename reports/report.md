@@ -2,11 +2,11 @@
 
 ## Key finding
 
-**Speakers tend to echo the language style of the person who spoke immediately before them.** When one speaker uses more pronouns, articles, conjunctions, or hedge words such as “maybe” and “kind of,” the next speaker is more likely to use those same types of words. This is the clearest result of the analysis: the data show linguistic alignment between adjacent speakers.
+**Speakers tend to echo the language style of the person who spoke immediately before them.** When one speaker uses more pronouns, articles, conjunctions, or hedge words such as “maybe” and “kind of,” the next speaker is more likely to use those same types of words.
 
-The pattern is statistically reliable in 6 of the 8 planned tests. The strongest association is for articles, followed by hedges and conjunctions. This means the next speaker is not copying every word, but is more likely to match the previous speaker’s broader word-use style.
+The pattern is statistically reliable in 6 of the 8 planned tests. The strongest association is for articles, followed by hedges and conjunctions.
 
-Analyzed 70,777 source records from a local NPR transcript CSV using read-only access. The source SHA-256 was identical before and after analysis.
+Analyzed 70,777 source records from a local NPR transcript CSV using read-only access.
 
 36 exact normalized-text duplicate records were excluded analytically; 0 malformed/empty records and 5 unique records without parsed turns were excluded. The retained corpus contains 70,736 transcripts, 1,328,174 turns, and 1,005,194 adjacent cross-speaker pairs before feature-specific support restrictions.
 
