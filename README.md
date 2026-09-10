@@ -61,6 +61,3 @@ To rebuild a cleaned dataset:
 python analysis/guest_level_analysis.py
 ```
 
-## Important interpretation
-
-The main project is a linguistic accommodation study in NPR transcripts. It is not a production scraper and it is not causal evidence. The thank-you/gender script is supplementary, while the larger report is the primary result.
