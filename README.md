@@ -1,53 +1,55 @@
-# NPR Scraping and Analysis Project
+# NPR transcript analysis project
 
-This repository contains the local NPR scraping pipeline, transcript parsing scripts, cleaned analysis outputs, and a reproducible correlation analysis for the thank-you and gender question.
+This repository contains a local NPR transcript analysis pipeline focused on linguistic accommodation and conversational alignment. The project includes the scraping and parsing workflow, a cleaned speaker-level dataset, and a report on sequential association between adjacent turns.
 
-## What is in here
+## Project goal
 
-- Scraping and collection scripts for NPR story links and transcripts
-- Legacy transcript parsing and analysis scripts
-- A cleaned guest-level transcript dataset
-- A local corpus-analysis workflow for adjacent-turn linguistic association
-- A small analysis script that combines gender and thank-you behavior for a simple correlation
+The main analysis asks whether speakers become more likely to use a linguistic feature when the immediately preceding speaker used that feature. The project tests this using local NPR transcript data and a simple token-based feature dictionary.
 
-## Key files
+## Core analysis
 
-- [main.py](main.py): legacy scraper entry point
-- [gender_function1.py](gender_function1.py): earlier gender logic
-- [Get_one_text_and_analyze.py](Get_one_text_and_analyze.py): transcript analysis prototype
-- [scraped_transcripts/guest_level_analysis.py](scraped_transcripts/guest_level_analysis.py): cleaned guest-level dataset builder
-- [scraped_transcripts/guest_speaker_level.csv](scraped_transcripts/guest_speaker_level.csv): cleaned speaker-level output
-- [scraped_transcripts/accommodation_corpus_results/report.md](scraped_transcripts/accommodation_corpus_results/report.md): full local corpus report
-- [analysis/thank_you_gender_correlation.py](analysis/thank_you_gender_correlation.py): thank-you + gender correlation script
+The main result is in the report at [reports/report.md](reports/report.md). The project measures sequential linguistic association for feature classes such as:
+
+- pronouns
+- articles
+- conjunctions
+- hedges
+
+It compares observed association to an exact expected null baseline and reports bootstrap/permutation uncertainty.
+
+This is an exploratory linguistic analysis, not a causal claim about power, deference, or gender differences.
+
+## What is in this repo
+
+- [scraping/main.py](scraping/main.py): local scraping and transcript retrieval logic
+- [analysis/guest_level_analysis.py](analysis/guest_level_analysis.py): builds a cleaned guest-level dataset from transcript HTML
+- [analysis/thank_you_gender_correlation.py](analysis/thank_you_gender_correlation.py): simple gender vs thank-you correlation script
+- [data/guest_speaker_level.csv](data/guest_speaker_level.csv): cleaned speaker-level output used for the gender/thank-you check
+- [data/names.csv](data/names.csv): name lookup used for gender inference
+- [data/responses.csv](data/responses.csv): earlier sample output
+- [reports/report.md](reports/report.md): summary of the main linguistic accommodation analysis
 
 ## Methods summary
 
-### 1. Data collection
-The scraping workflow starts from a list of NPR story URLs, opens each page, looks for a transcript link, fetches the transcript HTML, and extracts individual turns.
+### 1. Transcript collection
+The workflow gathers NPR transcript HTML, extracts the transcript body, and parses speaker-turn structure.
 
-### 2. Transcript parsing
-The parser identifies speaker labels and speech segments, strips page boilerplate, ignores empty paragraphs, and preserves adjacency across turns. It also retains metadata such as transcript ID and date when available.
+### 2. Turn parsing
+The parser isolates adjacent speech turns, removes boilerplate and empty paragraphs, and logs ambiguous or excluded cases.
 
-### 3. Thank-you detection
-The code checks for thank-you phrases such as:
+### 3. Linguistic feature detection
+The project tests feature presence for lexical categories such as pronouns, articles, conjunctions, and hedges using token-based matching.
 
-- thank you
-- thanks
-- thank you so much
-- thanks so much
+### 4. Sequential association test
+For each adjacent cross-speaker pair, the code compares:
 
-This is encoded as a binary indicator (`1` if present, `0` otherwise).
+- the probability that the reply contains the feature after a preceding feature
+- the probability that the reply contains the feature after a preceding absence of the feature
 
-### 4. Gender inference
-Speaker names are reduced to first-name form and mapped via a name/gender lookup table. The project originally used a name-frequency file that compares male and female name counts; unknown names remain unresolved and are dropped from strict correlation analysis.
+The difference is the observed association, with an exact null and bootstrap/permutation uncertainty.
 
-### 5. Analysis
-The final analysis step combines:
-
-- `gender` as a binary or categorical value
-- `said_thank_you` as a binary indicator
-
-It then computes a simple correlation between the two. This is an exploratory analysis and is not a causal claim.
+### 5. Thank-you and gender check
+A smaller exploratory analysis also combines speaker gender and whether a speaker says a thank-you phrase. This is included as a simple extension rather than the main project story.
 
 ## Quick start
 
@@ -57,16 +59,14 @@ From the project root:
 python analysis/thank_you_gender_correlation.py
 ```
 
-Or, if you want to regenerate the cleaned speaker dataset:
+To rebuild the cleaned dataset:
 
 ```bash
-python scraped_transcripts/guest_level_analysis.py
+python analysis/guest_level_analysis.py
 ```
 
-## Important limitation
+## Important interpretation
 
-This is not a production-grade scraping system and it is not a causal study. The thank-you/gender correlation is descriptive and should be interpreted as exploratory evidence only.
+The main project is a linguistic accommodation study in NPR transcripts. It is not a production scraper and it is not causal evidence. The thank-you/gender script is a supplementary analysis, while the larger report is the primary result.
 
-## Repository status
-
-This workspace was initialized as a local Git repository on the `npr-scrape-analysis` branch. A GitHub remote was not created here because no GitHub authentication or CLI tooling was available in this environment.
+This repo is intended to show a coherent local analysis pipeline with a real report, cleaned data, and a simple exploratory gender check rather than a raw dump of debugging scripts.
